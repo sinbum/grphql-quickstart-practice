@@ -18,9 +18,6 @@ firstName: String
 lastName: String
 }
 
-type Subscription {
-    book: Book
-}
 
 type Mutation {
     addBook(id: ID!, name: String, pageCount: Int, authorId: ID): Book
