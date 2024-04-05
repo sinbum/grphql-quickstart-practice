@@ -20,9 +20,17 @@ public class BookController {
         return Book.books;
     }
 
+    @MutationMapping
+    Book addBook (@Argument String id, @Argument String name,@Argument int pageCount, @Argument String authorId ) {
+        Book.books.add(new Book(id, name, pageCount, authorId));
+        return Book.getById(id);
+    }
+
 
     @SchemaMapping
     public Author author(Book book) {
         return Author.getById(book.authorId());
     }
+
+
 }
